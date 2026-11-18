@@ -1,0 +1,16 @@
+# Compiled binaries and build folders
+build/
+*.hex
+*.bin
+*.elf
+*.o
+*.a
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.bak
+*~
+.DS_Store
+Thumbs.db
