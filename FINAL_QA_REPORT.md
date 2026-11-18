@@ -2,8 +2,8 @@
 ### Case study: Smart Environmental Air Quality & Toxic Gas Alert Monitor using Arduino
 
 **Name –** Parshva Dongare  
-**PRN –** [Your PRN]  
-**Class –** BTech E&TC (Div: C)  
+**PRN –** 202301070033  
+**Class –** A  
 
 ---
 
