@@ -25,4 +25,16 @@
 #define ADC_MAX_VALUE               1023.0f
 #define VREF_VOLTAGE                5.0f
 
+// QA-001 Fix: Sensor Warmup & Stabilization Timing
+#define MQ135_WARMUP_TIME_MS        30000UL // 30-second thermal stabilization window
+
+// QA-003 Fix: Switch Debounce Timing Window
+#define BUTTON_DEBOUNCE_DELAY_MS    50UL    // 50ms temporal refractory period
+
+// QA-004 Fix: Non-Blocking Multi-Rate Task Scheduling Intervals
+#define INTERVAL_GAS_SAMPLE_MS      100UL   // 10 Hz sampling for real-time gas alarm
+#define INTERVAL_LCD_REFRESH_MS     500UL   // 2 Hz LCD display update
+#define INTERVAL_DHT_SAMPLE_MS      2500UL  // 0.4 Hz DHT22 read (min 2.0s required)
+#define INTERVAL_SERIAL_LOG_MS      1000UL  // 1 Hz telemetry logging
+
 #endif // CONFIG_H
