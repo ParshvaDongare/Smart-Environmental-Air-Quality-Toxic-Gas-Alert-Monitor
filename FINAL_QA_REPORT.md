@@ -10,7 +10,7 @@
 ## A. GitHub Repository Link
 
 **Repository:** https://github.com/ParshvaDongare/Smart-Environmental-Air-Quality-Toxic-Gas-Alert-Monitor  
-**Pull request:** https://github.com/ParshvaDongare/Smart-Environmental-Air-Quality-Toxic-Gas-Alert-Monitor/pull/6  
+**Pull request:** https://github.com/ParshvaDongare/Smart-Environmental-Air-Quality-Toxic-Gas-Alert-Monitor/pull/1  
 **Project board:** Air Quality Monitor QA Tracker (GitHub Projects)  
 
 The repository was created with a README and an MIT licence, with Issues and Projects enabled.

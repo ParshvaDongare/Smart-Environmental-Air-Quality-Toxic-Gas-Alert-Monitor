@@ -173,7 +173,7 @@ def build_pdf():
     story.append(Paragraph("A. GitHub Repository Link", h1_style))
     repo_links = """
     <b>Repository:</b> <font color="#000000"><u>https://github.com/ParshvaDongare/Smart-Environmental-Air-Quality-Toxic-Gas-Alert-Monitor</u></font><br/>
-    <b>Pull request:</b> <font color="#000000"><u>https://github.com/ParshvaDongare/Smart-Environmental-Air-Quality-Toxic-Gas-Alert-Monitor/pull/6</u></font><br/>
+    <b>Pull request:</b> <font color="#000000"><u>https://github.com/ParshvaDongare/Smart-Environmental-Air-Quality-Toxic-Gas-Alert-Monitor/pull/1</u></font><br/>
     <b>Project board:</b> Air Quality Monitor QA Tracker (GitHub Projects)
     """
     story.append(Paragraph(repo_links, body_style))
@@ -346,14 +346,14 @@ void loop() {<br/>
     add_fig(13, "Branches page showing main and the fix branch", height=170)
 
     story.append(Paragraph("2. Pull request", h2_style))
-    story.append(Paragraph("Pull request #6, \"Fix QA issues: improve code, non-blocking scheduler, and documentation (v2)\", contained four commits and referenced Fixes #1 to #5. GitHub linked each issue to the pull request automatically.", body_style))
+    story.append(Paragraph("Pull request #1, \"Fix QA issues: improve code, non-blocking scheduler, and documentation (v2)\", contained four commits and referenced Fixes #1 to #5. GitHub linked each issue to the pull request automatically.", body_style))
 
     story.append(PageBreak())
 
     # =========================================================================
     # PAGE 9
     # =========================================================================
-    add_fig(14, "Pull request #6: description, linked issues and commits", height=195)
+    add_fig(14, "Pull request #1: description, linked issues and commits", height=195)
 
     story.append(Paragraph("3. Review and discussion", h2_style))
     story.append(Paragraph("This was an individual activity and no external reviewer was available, so a self-review was carried out. A line comment on Smart_Air_Quality_Monitor.ino confirmed that millis() replaces delay() so the loop is no longer blocked, the conversation was resolved, and a self-review and test summary was posted on the pull request.", body_style))
@@ -389,7 +389,7 @@ void loop() {<br/>
         ["99b967b", "fix(driver): configure I2C wire timeout and peripheral auto-recovery", "Fixes #3 (I2C bus timeout)"],
         ["abe5547", "fix(input): implement 50ms software debounce for mute switch", "Fixes #4 (Button debounce)"],
         ["b84649f", "refactor(core): replace blocking delays with cooperative non-blocking FSM", "Fixes #2, #5 (FSM scheduler)"],
-        ["abfc080", "Merge pull request #6 from fix/improve-code-and-docs", "Merge into main"],
+        ["abfc080", "Merge pull request #1 from fix/improve-code-and-docs", "Merge into main"],
     ]
     cmt_table = Table(commits_data, colWidths=[65, 305, 130])
     cmt_table.setStyle(TableStyle([
@@ -462,7 +462,7 @@ void loop() {<br/>
     add_fig(21, "Milestone v1.0 Release at 100%", height=170)
 
     story.append(Paragraph("Project board: Air Quality Monitor QA Tracker", h2_style))
-    story.append(Paragraph("A board with Todo, In Progress and Done columns tracks the work. Issues #1 to #5 and pull request #6 are in the Done column.", body_style))
+    story.append(Paragraph("A board with Todo, In Progress and Done columns tracks the work. Issues #1 to #5 and pull request #1 are in the Done column.", body_style))
 
     story.append(PageBreak())
 
