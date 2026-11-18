@@ -25,4 +25,7 @@
 #define ADC_MAX_VALUE               1023.0f
 #define VREF_VOLTAGE                5.0f
 
+// QA-001 Fix: Sensor Warmup & Stabilization Timing
+#define MQ135_WARMUP_TIME_MS        30000UL // 30-second thermal stabilization window
+
 #endif // CONFIG_H
