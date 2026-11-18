@@ -1,7 +1,7 @@
 # GitHub-Based QA Documentation and Problem Solving
 ### Case study: Smart Environmental Air Quality & Toxic Gas Alert Monitor using Arduino
 
-**Name –** [Your Full Name]  
+**Name –** Parshva Dongare  
 **PRN –** [Your PRN]  
 **Class –** BTech E&TC (Div: C)  
 
@@ -9,8 +9,8 @@
 
 ## A. GitHub Repository Link
 
-**Repository:** `https://github.com/<your-username>/PM_PRJ`  
-**Pull request:** `https://github.com/<your-username>/PM_PRJ/pull/6`  
+**Repository:** https://github.com/ParshvaDongare/Smart-Environmental-Air-Quality-Toxic-Gas-Alert-Monitor  
+**Pull request:** https://github.com/ParshvaDongare/Smart-Environmental-Air-Quality-Toxic-Gas-Alert-Monitor/pull/6  
 **Project board:** Air Quality Monitor QA Tracker (GitHub Projects)  
 
 The repository was created with a README and an MIT licence, with Issues and Projects enabled.

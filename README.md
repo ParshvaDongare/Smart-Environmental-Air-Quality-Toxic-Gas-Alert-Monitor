@@ -75,7 +75,7 @@ d:\PM_PRJ\
 ### 1. Arduino IDE Setup
 1. Clone this repository:
    ```bash
-   git clone https://github.com/<your-username>/PM_PRJ.git
+   git clone https://github.com/ParshvaDongare/Smart-Environmental-Air-Quality-Toxic-Gas-Alert-Monitor.git
    ```
 2. Install required Arduino libraries from the Library Manager (`Ctrl + Shift + I`):
    - `LiquidCrystal_I2C` by Frank de Brabander

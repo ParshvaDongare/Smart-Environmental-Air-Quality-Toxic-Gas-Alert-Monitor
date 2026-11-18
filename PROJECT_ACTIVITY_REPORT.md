@@ -15,7 +15,7 @@ Utilizing structured issue trackers, issue templates, and commit-linked branch w
 
 ## Section A: GitHub Repository Link & Structure
 
-- **Repository Link:** `https://github.com/<your-username>/PM_PRJ.git` *(Replace with your GitHub repository URL upon remote push)*
+- **Repository Link:** https://github.com/ParshvaDongare/Smart-Environmental-Air-Quality-Toxic-Gas-Alert-Monitor  
 - **Local Workspace:** `D:\PM_PRJ`
 - **Default Branch:** `main`
 - **Active Release Tag:** `v1.1.0`
