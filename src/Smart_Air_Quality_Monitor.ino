@@ -15,6 +15,8 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);
 DHT dht(PIN_DHT22_DATA, DHT22);
 
 bool alarmMuted = false;
+bool sensorReady = false;
+unsigned long bootTimestamp = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -39,7 +41,8 @@ void setup() {
   delay(100);
   digitalWrite(PIN_BUZZER, LOW);
 
-  Serial.println(F("[BOOT] System initialization complete."));
+  bootTimestamp = millis();
+  Serial.println(F("[BOOT] System initialization complete. Entering warmup mode."));
 }
 
 void loop() {
@@ -86,8 +89,30 @@ void loop() {
   lcd.print((int)humidity);
   lcd.print("%   ");
 
+  // Check Sensor Warmup Phase (QA-001 Fix)
+  if (!sensorReady) {
+    unsigned long elapsed = millis() - bootTimestamp;
+    if (elapsed >= MQ135_WARMUP_TIME_MS) {
+      sensorReady = true;
+      Serial.println(F("[WARMUP] Stabilization complete. Gas monitoring active."));
+    } else {
+      int secondsLeft = (MQ135_WARMUP_TIME_MS - elapsed) / 1000;
+      lcd.setCursor(0, 0);
+      lcd.print("Sensor Warming  ");
+      lcd.setCursor(0, 1);
+      lcd.print("Wait: ");
+      lcd.print(secondsLeft);
+      lcd.print("s       ");
+      digitalWrite(PIN_BUZZER, LOW);
+      digitalWrite(PIN_LED_RED, LOW);
+      digitalWrite(PIN_LED_GREEN, (secondsLeft % 2 == 0) ? HIGH : LOW);
+      delay(1000);
+      return;
+    }
+  }
+
   // Alarm actuation
-  if (ppm > GAS_THRESHOLD_CRITICAL_PPM && !alarmMuted) {
+  if (sensorReady && ppm > GAS_THRESHOLD_CRITICAL_PPM && !alarmMuted) {
     digitalWrite(PIN_BUZZER, HIGH);
     digitalWrite(PIN_LED_RED, HIGH);
     digitalWrite(PIN_LED_GREEN, LOW);
