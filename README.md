@@ -1,9 +1,6 @@
 # Smart Environmental Air Quality & Toxic Gas Alert Monitor 🌿💨
-> **Academic Course Project:** Project Management (`2307476T`)  
-> **Institution:** MIT Academy of Engineering, Alandi (D), Pune  
-> **Department:** Department of Electronics & Telecommunication Engineering (E&TC)  
-> **Academic Year:** 2026–2027 | **Semester:** VII | **Class:** B.Tech (Div: C)  
-> **Course Outcome:** CO2 (Implementation of Collaborative Tools & Quality Assurance) | **Marks:** 15  
+> **Embedded Systems Engineering & Quality Assurance Testbed**  
+> **Course Outcome:** CO2 (Collaborative Tools & QA Defect Lifecycle Management)  
 
 ---
 

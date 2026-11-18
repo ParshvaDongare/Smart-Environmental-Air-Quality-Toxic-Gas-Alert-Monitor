@@ -1,9 +1,5 @@
 /**
  * Project: Smart Environmental Air Quality & Toxic Gas Alert Monitor
- * Academic Year: 2026-2027 | Course: Project Management (2307476T)
- * Department of Electronics & Telecommunication Engineering
- * MIT Academy of Engineering, Pune
- *
  * Version: 1.0.0 (Initial Prototype Release)
  * Description: Basic implementation for reading MQ-135 gas sensor and DHT22,
  * displaying readings on 16x2 I2C LCD, and sounding an alarm when threshold is crossed.
