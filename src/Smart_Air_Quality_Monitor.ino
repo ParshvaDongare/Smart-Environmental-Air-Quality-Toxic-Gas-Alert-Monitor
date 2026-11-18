@@ -27,8 +27,11 @@ void setup() {
   pinMode(PIN_LED_RED, OUTPUT);
   pinMode(PIN_LED_GREEN, OUTPUT);
 
-  // Initialize LCD
+  // Initialize LCD with I2C bus lockup protection (QA-002 Fix)
   Wire.begin();
+  #if defined(WIRE_HAS_TIMEOUT)
+  Wire.setWireTimeout(3000, true); // 3000 us timeout with auto-reset bus peripheral
+  #endif
   lcd.init();
   lcd.backlight();
   lcd.setCursor(0, 0);
