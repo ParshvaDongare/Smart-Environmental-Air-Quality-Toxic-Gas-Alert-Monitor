@@ -18,6 +18,11 @@ bool alarmMuted = false;
 bool sensorReady = false;
 unsigned long bootTimestamp = 0;
 
+// Button Debounce State Variables (QA-003 Fix)
+int lastButtonReading = HIGH;
+int stableButtonState = HIGH;
+unsigned long lastDebounceTimestamp = 0;
+
 void setup() {
   Serial.begin(9600);
   Serial.println(F("[BOOT] Initializing Air Quality Monitor v1.0.0..."));
@@ -58,11 +63,22 @@ void loop() {
   float humidity = dht.readHumidity();
   float temperature = dht.readTemperature();
 
-  // Check Mute Button (Naive check without debouncing)
-  if (digitalRead(PIN_BUTTON_MUTE) == LOW) {
-    alarmMuted = !alarmMuted; // Toggle mute
-    Serial.println(F("[BUTTON] Mute toggled!"));
+  // Check Mute Button with 50ms Debounce Filter (QA-003 Fix)
+  int currentReading = digitalRead(PIN_BUTTON_MUTE);
+  if (currentReading != lastButtonReading) {
+    lastDebounceTimestamp = millis();
   }
+  if ((millis() - lastDebounceTimestamp) > BUTTON_DEBOUNCE_DELAY_MS) {
+    if (currentReading != stableButtonState) {
+      stableButtonState = currentReading;
+      if (stableButtonState == LOW) { // Confirmed falling-edge button press
+        alarmMuted = !alarmMuted;
+        Serial.print(F("[BUTTON] Mute toggled cleanly: "));
+        Serial.println(alarmMuted ? F("MUTED") : F("UNMUTED"));
+      }
+    }
+  }
+  lastButtonReading = currentReading;
 
   // Serial Diagnostic Logging
   Serial.print(F("PPM: "));

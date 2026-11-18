@@ -28,4 +28,7 @@
 // QA-001 Fix: Sensor Warmup & Stabilization Timing
 #define MQ135_WARMUP_TIME_MS        30000UL // 30-second thermal stabilization window
 
+// QA-003 Fix: Switch Debounce Timing Window
+#define BUTTON_DEBOUNCE_DELAY_MS    50UL    // 50ms temporal refractory period
+
 #endif // CONFIG_H
